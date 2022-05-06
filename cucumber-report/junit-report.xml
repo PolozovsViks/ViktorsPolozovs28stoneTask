@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="13.558101">
+<testcase classname="Login and interact with items" name="(Main case) Login, add item to card, check that the correct item is added" time="3.527238">
+<system-out><![CDATA[Given I am on the web application...........................................passed
+When I enter login "standard_user"..........................................passed
+And I enter password "secret_sauce".........................................passed
+And I click on login button.................................................passed
+And I select the desired item "Sauce Labs Backpack".........................passed
+And I add the product to cart...............................................passed
+And I open the cart.........................................................passed
+Then I see that correct item "Sauce Labs Backpack" is in the cart...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Login and interact with items" name="(Additional case) Login, add 4 items to cart, remove 2 items and check that 2 items are left" time="3.007051">
+<system-out><![CDATA[Given I am on the web application...........................................passed
+When I enter login "standard_user"..........................................passed
+And I enter password "secret_sauce".........................................passed
+And I click on login button.................................................passed
+And I add 4 items to cart...................................................passed
+And I open the cart.........................................................passed
+And I check that 4 items are in the cart....................................passed
+And I remove 3 items from cart..............................................passed
+Then I see that 1 item is left in the cart..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login and interact with items" name="(Additional case) Login, sort items by preference" time="7.023812">
+<failure message="org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;&#10;Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'&#10;System info: host: 'VIKI', ip: '192.168.25.106', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'&#10;Driver info: driver.version: unknown&#13;&#10;&#9;at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:47)&#13;&#10;&#9;at stepDefinitions.Steps.TaskSteps.iSeeItemsSortedAccordingly(TaskSteps.java:126)&#13;&#10;&#9;at ✽.Then I see that items in list are sorted accordingly(cart.feature:40)&#13;&#10;"><![CDATA[Given I am on the web application...........................................passed
+When I enter login "standard_user"..........................................passed
+And I enter password "secret_sauce".........................................passed
+And I click on login button.................................................passed
+And I click on filter dropdown menu.........................................passed
+And I select the sort "Price (low to high)" by preference...................passed
+Then I see that items in list are sorted accordingly........................failed
+
+StackTrace:
+org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "div"
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'VIKI', ip: '192.168.25.106', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:47)
+	at stepDefinitions.Steps.TaskSteps.iSeeItemsSortedAccordingly(TaskSteps.java:126)
+	at ✽.Then I see that items in list are sorted accordingly(cart.feature:40)
+]]></failure>
+</testcase>
+</testsuite>
