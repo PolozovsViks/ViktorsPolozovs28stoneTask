@@ -3,7 +3,7 @@ Feature: Login and interact with items
   (Additional case) As a user, I should be able to add and also remove several items to/from cart.
   (Additional case) As a user, I should be able to sort the items in list by preference
 
-  Scenario Outline: (Main case) Login, add item to card, check that the correct item is added
+  Scenario Outline: (Main case) Login, add item to cart, check that the correct item is added
     Given I am on the web application
     When I enter login "<login>"
     And I enter password "<password>"
@@ -16,7 +16,7 @@ Feature: Login and interact with items
       | login         | password     | item                |
       | standard_user | secret_sauce | Sauce Labs Backpack |
 
-  Scenario Outline: (Additional case) Login, add 4 items to cart, remove 2 items and check that 2 items are left
+  Scenario Outline: (Additional case) Login, add 4 items to cart, remove 3 items and check that 1 item is left
     Given I am on the web application
     When I enter login "<login>"
     And I enter password "<password>"
